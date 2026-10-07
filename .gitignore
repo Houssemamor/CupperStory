@@ -1,0 +1,97 @@
+# Unity project ignore rules.
+#
+# Four things are worth tracking in a Unity project:
+#   Assets/          authored content and scripts
+#   Packages/        manifest.json and any local packages
+#   ProjectSettings/ project configuration
+#
+# Everything else is derived state Unity rebuilds from those. The patterns below
+# are deliberately NOT anchored with a leading slash, so they match at any depth.
+#
+# Verify with:
+#   git check-ignore -v Library
+
+# ---- Unity generated folders --------------------------------------------
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+[Tt]est[Rr]esults/
+
+# Asset meta data should be committed, but this folder is generated.
+[Aa]ssets/AssetStoreTools*
+
+# ---- Generated IDE project files ----------------------------------------
+# Unity regenerates these. Absolute paths differ per machine, so committing
+# them causes constant churn.
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# IDE folders created by Rider, VS and VS Code
+.vs/
+.idea/
+.vscode/
+
+# ---- OS noise ------------------------------------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ---- Crash and diagnostic output ----------------------------------------
+sysinfo.txt
+crashlytics-build.properties
+*.stackdump
+
+# ---- Build artefacts -----------------------------------------------------
+*.apk
+*.aab
+*.unitypackage
+*.app
+symbols/
+
+# ---- Assignment reference material --------------------------------------
+# Screenshots of the course brief and pasted snippets. Personal working
+# material, not project source. The requirements they contain are summarised
+# in README.md.
+docs/
+
+# ---- AI agent configuration ----------------------------------------------
+# Local-only. The design decisions these files contain are documented for
+# humans in README.md so the whole team can read them.
+CLAUDE.md
+.claude/
+.cursor/
+.cursorrules
+.aider*
+GEMINI.md
+AGENTS.md
+.windsurfrules
+
+# ---- Never commit secrets ------------------------------------------------
+# Unity project settings are safe to commit, but local credentials, signing
+# keys and environment overrides must never be.
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.mobileprovision
+.env
+.env.*
+secrets.json
